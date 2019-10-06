@@ -17,6 +17,24 @@ public class Car {
         System.out.println(report);
     }
 
+    public void Start() {
+        if (this.engine.EngineIsOn()) {
+            System.out.println("Engine is already on.");
+        } else {
+            this.engine.StartEngine();
+            System.out.println("Started the car.");
+        }
+    }
+
+    public void Stop() {
+        if (!this.engine.EngineIsOn()) {
+            System.out.println("Engine is already off.");
+        } else {
+            this.engine.StopEngine();
+            System.out.println("Stopped the car.");
+        }
+    }
+
     public void Refuel() {
         this.engine.FillTank();
     }

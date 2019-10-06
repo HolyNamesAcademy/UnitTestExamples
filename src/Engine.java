@@ -5,7 +5,7 @@ public class Engine {
     private double gallonsOfFuelRemaining;
     private boolean engineIsOn;
 
-    private Engine(double fuelCapacity, double gallonsOfFuelRemaining, double mpg) {
+    public Engine(double fuelCapacity, double gallonsOfFuelRemaining, double mpg) {
         this.fuelCapacity = fuelCapacity;
         this.gallonsOfFuelRemaining = gallonsOfFuelRemaining;
         this.mpg = mpg;
