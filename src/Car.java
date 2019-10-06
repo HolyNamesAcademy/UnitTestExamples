@@ -9,10 +9,11 @@ public class Car {
     }
 
     public void GetStatusReport() {
-        String engineStatus = this.engine.EngineIsOn() ? "on." : "off.";
-        System.out.println("Car is " + engineStatus);
+        String engineStatus = this.engine.EngineIsOn() ? "ON" : "OFF";
+        System.out.println("Engine: " + engineStatus);
+        System.out.println(this.engine.FuelRemaining() + " gallons of fuel remaining.");
 
-        String report = this.safetySystem.CarIsSafeToDrive().GetReportSummary();
+        String report = this.safetySystem.GetCurrentSafetyReport().GetReportSummary();
         System.out.println(report);
     }
 

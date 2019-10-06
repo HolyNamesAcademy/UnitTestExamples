@@ -22,6 +22,11 @@ public class SafetySystem {
         this.airbags.add(new Airbag(40, "Passenger"));
     }
 
+    /**
+     * Simulate a collision.
+     *
+     * @param forceEncountered The force encountered during a collision, im Newtons.
+     */
     public void Crash(double forceEncountered) {
         for (Airbag airbag : this.airbags) {
             if (airbag.ShouldDeploy(forceEncountered) && !airbag.AirbagIsDeployed()) {
@@ -30,7 +35,12 @@ public class SafetySystem {
         }
     }
 
-    public SafetyReport CarIsSafeToDrive() {
+    /**
+     * Checks if the car is safe to drive, based on the current status of all safety features of the car.
+     *
+     * @return A report on the current safety status of the car.
+     */
+    public SafetyReport GetCurrentSafetyReport() {
         if (this.airbags.size() == 0) {
             return SafetyReport.CreateUnsafeReport("No airbags detected.");
         }
