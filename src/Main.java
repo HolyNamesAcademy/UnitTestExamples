@@ -17,21 +17,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+
+
+
         Engine engine = new Engine(14.8, 10, 35);
         Car car = new Car(engine);
 
         car.GetStatusReport();
 
         PrintHelp();
-        
+
         // Keep looping until the user gives us valid input
         while (true) {
 
             System.out.print("Enter your choice:\t");
-            String program = scanner.next().toLowerCase();
+            String option = scanner.next().toLowerCase();
             System.out.println();
 
-            switch (program) {
+            switch (option) {
                 case "s":
                 case "status":
                     car.GetStatusReport();
