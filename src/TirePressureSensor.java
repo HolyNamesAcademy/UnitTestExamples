@@ -12,6 +12,9 @@ public class TirePressureSensor {
         this.maxPressureAllowed = maxPressureAllowed;
     }
 
+    /**
+     * Checks if the current pressure in the tire is within the safe range.
+     */
     public boolean PressureIsSafe() {
         return this.minPressureAllowed <= this.currentPressure && this.currentPressure <= this.maxPressureAllowed;
     }
