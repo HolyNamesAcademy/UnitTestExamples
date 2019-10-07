@@ -61,6 +61,10 @@ public class Engine {
         return refillAmount;
     }
 
+    public double GetRangeRemaining() {
+        return this.gallonsOfFuelRemaining * this.mpg;
+    }
+
     /**
      * Drive the car the specified distance and reduce the amount of fuel in the tank according to the engine's MPG rating.
      *

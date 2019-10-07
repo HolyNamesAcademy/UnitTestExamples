@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class SafetySystem {
 
-    private final double FuelThreshold = 0.1;
+    private static final double FuelThreshold = 0.1;
 
     private ArrayList<TirePressureSensor> tirePressureSensors;
     private ArrayList<Airbag> airbags;
@@ -47,13 +47,13 @@ public class SafetySystem {
 
         for (Airbag airbag : this.airbags) {
             if (airbag.AirbagIsDeployed()) {
-                String message = "Airbag " + airbag.GetLabel() + " has been deployed.";
+                String message = airbag.GetLabel() + " airbag has been deployed.";
                 return SafetyReport.CreateUnsafeReport(message);
             }
         }
 
         for (TirePressureSensor sensor : this.tirePressureSensors) {
-            if (sensor.PressureIsSafe()) {
+            if (!sensor.PressureIsSafe()) {
                 String message = "The " + sensor.GetWheelLabel() + " tire has an unsafe pressure level.";
                 return SafetyReport.CreateUnsafeReport(message);
             }
